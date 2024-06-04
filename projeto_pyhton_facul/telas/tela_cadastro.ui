@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>667</width>
-    <height>800</height>
+    <width>666</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -58,7 +58,7 @@
      <rect>
       <x>20</x>
       <y>250</y>
-      <width>401</width>
+      <width>479</width>
       <height>41</height>
      </rect>
     </property>
@@ -85,7 +85,7 @@
      <rect>
       <x>20</x>
       <y>300</y>
-      <width>491</width>
+      <width>607</width>
       <height>41</height>
      </rect>
     </property>
@@ -206,7 +206,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>480</y>
+      <y>460</y>
       <width>341</width>
       <height>102</height>
      </rect>
@@ -236,7 +236,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="btnEditar">
+      <widget class="QPushButton" name="btnBanco">
        <property name="maximumSize">
         <size>
          <width>100</width>
@@ -254,7 +254,7 @@
         <string notr="true">background-color: rgb(255, 170, 0);</string>
        </property>
        <property name="text">
-        <string>EDITAR</string>
+        <string>LISTA</string>
        </property>
       </widget>
      </item>
@@ -263,8 +263,8 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>-1</x>
-      <y>-1</y>
+      <x>0</x>
+      <y>0</y>
       <width>671</width>
       <height>121</height>
      </rect>
@@ -281,7 +281,7 @@
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>210</x>
        <y>50</y>
        <width>271</width>
        <height>31</height>
@@ -302,75 +302,35 @@
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>510</x>
-       <y>10</y>
-       <width>111</width>
-       <height>111</height>
+       <x>520</x>
+       <y>0</y>
+       <width>241</width>
+       <height>121</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../../Pictures/codlogopn.png</pixmap>
+      <pixmap>../imagens/wz3_150.png</pixmap>
      </property>
     </widget>
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-40</x>
        <y>0</y>
-       <width>201</width>
-       <height>131</height>
+       <width>221</width>
+       <height>121</height>
       </rect>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>../../../../Pictures/fortnitelogo.jpeg</pixmap>
+      <pixmap>../imagens/fortnelson250.webp</pixmap>
      </property>
     </widget>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>680</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget_7">
-    <property name="geometry">
-     <rect>
-      <x>19</x>
-      <y>410</y>
-      <width>501</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_7">
-     <item>
-      <widget class="QLabel" name="lblErro">
-       <property name="font">
-        <font>
-         <pointsize>15</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 85, 0);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -378,7 +338,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>667</width>
+     <width>666</width>
      <height>21</height>
     </rect>
    </property>
