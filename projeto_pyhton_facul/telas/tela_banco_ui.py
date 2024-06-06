@@ -89,7 +89,8 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.btnPDF.setFont(font)
-        self.btnPDF.setStyleSheet("background-color: rgb(255, 88, 10);")
+        self.btnPDF.setStyleSheet("background-color: rgb(255, 88, 10);\n"
+"color: rgb(255, 255, 255);")
         self.btnPDF.setObjectName("btnPDF")
         self.horizontalLayoutWidget_6 = QtWidgets.QWidget(self.centralwidget)
         self.horizontalLayoutWidget_6.setGeometry(QtCore.QRect(120, 620, 341, 71))

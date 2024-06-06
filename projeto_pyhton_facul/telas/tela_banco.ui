@@ -158,7 +158,8 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 88, 10);</string>
+     <string notr="true">background-color: rgb(255, 88, 10);
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>GERAR PDF</string>

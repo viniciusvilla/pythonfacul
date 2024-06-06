@@ -6,9 +6,20 @@ from PyQt5.QtWidgets import QFileDialog
 
 
 def excluir_dados(tela_banco, banco):
+    """
+    Função responsável pela exclusão de linhas, tanto da tabela exibida no programa, quanto da tabela do banco de dados MySQL.
+
+    linha_selecionada: Variável que armazena a linha selecionada (clicada) pelo usúario pelo metódo de currentRow().
+
+    dados_lidos: Variável que recebe os id que estão armazenados no banco de dados MySQL.
+
+    valor_id: Variável que recebe o valor de dados_lidos no primeiro indice da linha_selecionada pelo usúario, ou seja, o id da linha selecionada pelo usúario.
+
+    """
+    #Parte responsável pela tela de mensagem de confimação de exclusão pelo usúario.
 
     msg = QMessageBox(tela_banco)
-    msg.setStyleSheet("background-color: #f1f1f1;")
+    msg.setStyleSheet("background-color: rgb(255, 255, 255);")
     msg.setWindowTitle('Confirmar Exclusão')
     msg.setText('Tem certeza que deseja EXCLUIR a linha selecionada?')
     msg.setIcon(QMessageBox.Question)
@@ -21,25 +32,26 @@ def excluir_dados(tela_banco, banco):
 
     resposta = msg.exec_()
 
+    #Caso a resposta seja "NÃO", é acionado o metodo return, impedindo a exclusão da linha selecionada.
     if resposta == QMessageBox.No:
         return
 
+    #Remove da tableWidget a linha selecionada para remoção.
     linha_selecionada = tela_banco.tableWidget.currentRow()
     tela_banco.tableWidget.removeRow(linha_selecionada)
-    print(f'Linha selecionada {linha_selecionada}')
 
+    
     cursor = banco.cursor()
     cursor.execute("SELECT id FROM produtos")
     dados_lidos = cursor.fetchall()
-    print(f'Dados lidos: {dados_lidos}')
     valor_id = dados_lidos[linha_selecionada][0]
-    print(f'Dados lidos no indice linha selecionada: {valor_id}')
 
+    #Por fim, exlclui a linha no banco de dados MySQL seguindo como parâmetro o id do valor_id.
     cursor.execute("DELETE FROM produtos WHERE id=" + str(valor_id))
     banco.commit()
 
 
-def gerar_pdf(tela_cadastro, banco, tela_banco):
+def gerar_pdf(banco, tela_banco):
     try:
         pdf_cursor = banco.cursor()
         comando_SQL = "SELECT * FROM produtos"
@@ -89,15 +101,18 @@ def gerar_pdf(tela_cadastro, banco, tela_banco):
                 pdf.drawString(510, 750 - y, f"{dados_lidos[i][5]:.2f}")  # Formatando o valor para duas casas decimais
             
             pdf.save()
-            print('PDF GERADO')
-            QMessageBox.about(tela_cadastro, '[SUCESSO]', 'PDF gerado com sucesso!')
+            QMessageBox.about(tela_banco, '[SUCESSO]', 'PDF gerado com sucesso!')
             
     except mysql.connector.Error as err:
         print(f'Erro ao conectar ao banco de dados: {err}')
-        QMessageBox.about(tela_cadastro, '[ERRO]', f'Erro ao gerar PDF: {err}')
+        QMessageBox.about(tela_banco, '[ERRO]', f'Erro ao gerar PDF: {err}')
 
 
 def limpar_campos(tela_cadastro):
+    """
+    Função responsavel pela limpeza dos campos (inputs) da tela_cadastro toda vez que o usúario clicar no botão "cadastrar" (btnCadastrar)
+
+    """
 
     tela_cadastro.produtoTipo.clear()
     tela_cadastro.produtoMarca.clear()
